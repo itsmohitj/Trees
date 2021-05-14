@@ -11,3 +11,6 @@ if __name__ == '__main__':
     lst = list(map(lambda x : x if type(x) is int else x, input().split()))
     root = createTree.createLevelOrder(lst, None, 0, len(lst))
     traversal.printInorder(root)
+    traversal.printPreorder(root)
+    traversal.printPostorder(root)
+    traversal.printLevelorder(root)
