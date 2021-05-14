@@ -4,11 +4,11 @@ def printInorder(root):
         print(root.data, end = " ")
         printInorder(root.right)
 
-def printPreoder(root):
+def printPreorder(root):
     if root:
         print(root.data, end = " ")
-        printPreoder(root.left)
-        printPreoder(root.right)
+        printPreorder(root.left)
+        printPreorder(root.right)
 
 def printPostorder(root):
     if root:
@@ -16,3 +16,15 @@ def printPostorder(root):
         printPostorder(root.right)
         print(root.data, end=" ")
 
+def printLevelorder(root):
+    if root is None:
+        return
+    queue = []
+    queue.append(root)
+    while(len(queue) > 0):
+        print(queue[0].data, end=" ")
+        temp = queue.pop(0)
+        if temp.left is not None:
+            queue.append(temp.left)
+        if temp.right is not None:
+            queue.append(temp.right)
